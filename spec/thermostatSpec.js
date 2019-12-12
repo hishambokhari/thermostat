@@ -27,6 +27,12 @@ describe('Thermostat', function(){
         };
         expect(thermostat.getCurrentTemperature()).toEqual(10);
     });
+    it('when power saving mode is on, limit the temperature to 25 degrees', function(){
+        for (var i = 0; i < 25; i++) {
+            thermostat.up();
+        };
+        expect(thermostat.getCurrentTemperature()).toEqual(25);
+    });
 
 });
 
